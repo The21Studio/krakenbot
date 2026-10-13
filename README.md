@@ -70,7 +70,22 @@ Bot di trading algoritmico multi-mercato in Python: analizza il mercato in tempo
 
 ## Risultati
 
-<!-- Da completare con i dati del report: periodo, numero di trade, win rate, P&L, drawdown massimo, e 2-3 grafici in docs/ -->
+Il bot ha girato su un server Hetzner in modalità simulazione (`DRY_RUN`), con dati di mercato reali, per circa 4 mesi.
+
+| Metrica | Risultato |
+|---|---|
+| Rendimento cumulativo del bot | **+7,97%** |
+| BTC buy & hold, stesso periodo | **+31,5%** |
+| Profit factor | **~1,0** |
+
+**Conclusione: la strategia non ha un vantaggio statistico.** Con un profit factor vicino a 1 i guadagni compensano a malapena le perdite, e il bot ha reso circa un quarto di quanto avrebbe reso tenere semplicemente BTC.
+
+Ci sono arrivato in tre passi:
+1. **Backtest corretto**: ho riscritto il motore di backtest perché simulasse il comportamento reale del bot (uscite parziali, trailing stop, cooldown) invece di una versione semplificata, che dava risultati troppo ottimistici
+2. **Forward test**: mesi di esecuzione in simulazione su dati reali, senza ritoccare i parametri a posteriori
+3. **Benchmark**: confronto con il semplice buy & hold sullo stesso periodo
+
+Per questo il bot non è mai passato al denaro reale. Il valore del progetto sta nell'infrastruttura (dati in tempo reale, architettura asincrona multi-mercato, gestione del rischio, API e dashboard) e nel metodo con cui l'ho validato.
 
 ---
 
