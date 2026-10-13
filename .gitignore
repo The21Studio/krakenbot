@@ -1,0 +1,28 @@
+# Credenziali
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Dati di runtime (posizioni, trade reali, stato del bot)
+posizioni.json
+trades_log.json
+shared_state.json
+virtual_portfolio.json
+screener_state.json
+market_context.json
+snapshots_cache.json
+cooldowns.json
+sl_count.json
+dca_portfolio.json
+dca_state.json
+backtest_results.json
+*.log
+
+# macOS
+.DS_Store
